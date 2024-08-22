@@ -39,17 +39,7 @@ Route::get('/', function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });*/
 
- // Registration...
-    if (Features::enabled(Features::registration())) {
-        if ($enableViews) {
-            Route::get(RoutePath::for('register', '/register'), [RegistrarUsuarioController::class, 'create'])
-                ->middleware(['guest:'.config('fortify.guard')])
-                ->name('register');
-        }
-
-        Route::get('/two-factor-authenticator-form', function () {
-            return view('profile.show');
-        })->name('two-factor.authenticator');
+ 
        
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
