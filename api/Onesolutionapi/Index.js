@@ -13,7 +13,7 @@ const dbOptions = {
     password: process.env.DB_PASSWORD || "",
     database: process.env.DB_NAME || "admsystemct"
 }
-hola
+
 // Middlewares
 app.use(myconn(mysql,dbOptions,'single'))
 app.use(express.json())
